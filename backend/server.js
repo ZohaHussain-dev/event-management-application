@@ -13,7 +13,7 @@ app.use(cors());
 app.use(bodyParser.json());
 
 // Connect to MongoDB
-mongoose.connect('mongodb://localhost:27017/event_management', {
+mongoose.connect(process.env.MONGO_URI || 'mongodb://localhost:27017/event_management', {
 	useNewUrlParser: true,
 	useUnifiedTopology: true,
 }).then(() => {
